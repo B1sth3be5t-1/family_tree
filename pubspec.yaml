@@ -1,0 +1,33 @@
+name: family_tree
+description: "Family Tree Graphing Software"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  modal_progress_hud_nsn: ^0.5.0
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
+  get_it: ^7.7.0
+  http: ^1.2.1
+  firebase_core: ^2.31.0
+  dynamic_color: ^1.7.0
+  tuple: ^2.0.2
+  firebase_auth: ^4.19.5
+  cloud_firestore: ^4.17.3
+  animate_do: ^3.3.4
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
