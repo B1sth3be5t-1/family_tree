@@ -1,18 +1,18 @@
 import 'package:dynamic_color/dynamic_color.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:family_tree/Config_and_Extras/Material-theme/color_schemes.g.dart';
 import 'package:family_tree/Config_and_Extras/Material-theme/custom_color.g.dart';
 import 'package:family_tree/Config_and_Extras/config.dart';
 import 'package:family_tree/Repositories/Interfaces/authentication_repo.dart';
 import 'package:family_tree/Repositories/Repos/Firebase/authentication_repo_firebase.dart';
 import 'package:family_tree/UI_Presentation/Navigation/Login_and_Register/LoginRegisterCubits/authentication_cubit.dart';
-import 'package:family_tree/UI_Presentation/Navigation/welcome_splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 import 'Repositories/Repos/ServerArchitecture/authentication_repo_server.dart';
 import 'Repositories/repository_manager.dart';
+import 'UI_Presentation/Navigation/welcome_splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -37,8 +37,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return DynamicColorBuilder(
-        builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+    return DynamicColorBuilder(builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
       ColorScheme lightScheme;
       ColorScheme darkScheme;
 
@@ -57,7 +56,7 @@ class MyApp extends StatelessWidget {
       return BlocProvider<AuthenticationCubit>(
         create: (BuildContext context) => AuthenticationCubit(),
         child: MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Family Tree',
             theme: ThemeData(
               colorScheme: lightColorScheme,
               useMaterial3: true,

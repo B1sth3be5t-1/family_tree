@@ -1,10 +1,9 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:family_tree/UI_Presentation/Navigation/stepper.dart';
 import 'package:flutter/material.dart';
-import 'package:family_tree/UI_Presentation/Navigation/Login_and_Register/login.dart';
-import 'package:family_tree/UI_Presentation/Navigation/Login_and_Register/register.dart';
 
 class WelcomeSplashScreen extends StatelessWidget {
-  final Duration duration = const Duration(milliseconds: 800);
+  final Duration duration = const Duration(milliseconds: 500);
 
   const WelcomeSplashScreen({super.key});
 
@@ -23,7 +22,6 @@ class WelcomeSplashScreen extends StatelessWidget {
             ///
             FadeInUp(
               duration: duration,
-              delay: const Duration(milliseconds: 2000),
               child: Container(
                 margin: const EdgeInsets.only(
                   top: 50,
@@ -44,7 +42,6 @@ class WelcomeSplashScreen extends StatelessWidget {
             /// TITLE
             FadeInUp(
               duration: duration,
-              delay: const Duration(milliseconds: 1600),
               child: const Text(
                 "Family Tree",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -59,61 +56,68 @@ class WelcomeSplashScreen extends StatelessWidget {
             /// SUBTITLE
             FadeInUp(
               duration: duration,
-              delay: const Duration(milliseconds: 1000),
+              delay: const Duration(milliseconds: 200),
               child: const Text(
                 "The Family Tree Graph.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    height: 1.2,
-                    color: Colors.grey,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300),
+                    height: 1.2, color: Colors.grey, fontSize: 17, fontWeight: FontWeight.w300),
               ),
             ),
 
             ///
             Expanded(child: Container()),
 
-            /// GOOGLE BTN
             FadeInUp(
               duration: duration,
-              delay: const Duration(milliseconds: 600),
-              child: SButton(
-                size: size,
-                color: Theme.of(context).colorScheme.primaryContainer,
-                text: "Login",
-                textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer),
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Login(),
-                  ),
-                ),
-              ),
-            ),
-
-            ///
-            const SizedBox(
-              height: 20,
-            ),
-
-            /// GITHUB BTN
-            FadeInUp(
-              duration: duration,
-              delay: const Duration(milliseconds: 200),
+              delay: const Duration(milliseconds: 1000),
               child: SButton(
                 size: size,
                 color: Theme.of(context).colorScheme.primary,
-                text: "Register",
-                textStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+                text: 'Get started',
+                textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const Register(),
+                    builder: (context) => const EZ_Stepper(),
                   ),
                 ),
               ),
             ),
+
+            // /// GOOGLE BTN
+            // FadeInUp(
+            //   duration: duration,
+            //   delay: const Duration(milliseconds: 1000),
+            //   child: Column(
+            //     children: [
+            //       SButton(
+            //         size: size,
+            //         color: Theme.of(context).colorScheme.primary,
+            //         text: "Register",
+            //         textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+            //         onPressed: () => Navigator.of(context).push(
+            //           MaterialPageRoute(
+            //             builder: (context) => const Register(),
+            //           ),
+            //         ),
+            //       ),
+            //       const SizedBox(
+            //         height: 20,
+            //       ),
+            //       SButton(
+            //         size: size,
+            //         color: Theme.of(context).colorScheme.primaryContainer,
+            //         text: "Login",
+            //         textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer),
+            //         onPressed: () => Navigator.of(context).push(
+            //           MaterialPageRoute(
+            //             builder: (context) => const Login(),
+            //           ),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
             ///
             const SizedBox(
